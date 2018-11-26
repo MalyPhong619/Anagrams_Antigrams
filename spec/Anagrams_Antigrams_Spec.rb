@@ -7,4 +7,9 @@ require 'Anagrams_Antigrams'
     test_anagram = Anagram_And_Antigram.new("weather")
     expect(test_anagram.anagram("wreathe")).to(eq("These words are anagrams"))
   end
+
+  it("returns words are anagrams reguardless of case") do
+    test_anagram = Anagram_And_Antigram.new("WEAther")
+    expect(test_anagram.anagram("wreaTHE")).to(eq("These words are anagrams"))
+  end
 end
