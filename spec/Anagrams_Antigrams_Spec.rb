@@ -2,14 +2,20 @@ require 'rspec'
 require 'Anagrams_Antigrams'
 
 
- describe("Word#anagram") do
-  it("check if two words are anagrams and return string with result") do
+ describe("#anagram") do
+
+  it("checks if two words are anagrams") do
     test_anagram = Anagram_And_Antigram.new("weather")
     expect(test_anagram.anagram("wreathe")).to(eq("These words are anagrams"))
   end
 
-  it("returns words are anagrams reguardless of case") do
+  it("returns two words as anagrams reguardless of case") do
     test_anagram = Anagram_And_Antigram.new("WEAther")
     expect(test_anagram.anagram("wreaTHE")).to(eq("These words are anagrams"))
   end
+
+  it("checks to see the anagrams are actual words") do
+   test_anagram = Anagram_And_Antigram.new("hmp")
+   expect(test_anagram.anagram("mph")).to(eq("You need to input actual words!"))
+ end
 end
