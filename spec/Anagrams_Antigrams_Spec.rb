@@ -15,5 +15,8 @@ require 'pry'
     expect(test_anagram.anagram()).to(eq("These words are anagrams"))
   end
 
-
+  it("checks to see the anagrams are actual words") do
+   test_anagram = Anagram.new("hair", "hra")
+   expect(test_anagram.anagram()).to(eq("You need to input actual words!"))
+ end
 end
