@@ -3,7 +3,7 @@ require 'Anagrams_Antigrams'
 require 'pry'
 
 
- describe("Anagram") do
+describe("Anagram") do
 
   it("checks if two words are anagrams") do
     test_anagram = Anagram.new("weather", "wreathe")
@@ -16,12 +16,12 @@ require 'pry'
   end
 
   it("checks to see the anagrams are actual words") do
-   test_anagram = Anagram.new("weather", "wthr")
-   expect(test_anagram.anagram()).to(eq("You need to input actual words!"))
- end
+    test_anagram = Anagram.new("weather", "wthr")
+    expect(test_anagram.anagram()).to(eq("You need to input actual words!"))
+  end
 
- it("check to if words are not anagrams") do
-   test_anagram = Anagram.new("WEAther", "wreATH")
-   expect(test_anagram.anagram()).to(eq("These words are not Anagrams!"))
- end
+  it("check to if words are antigrams") do
+    test_anagram = Anagram.new("WEAther", "breAthe")
+    expect(test_anagram.anagram()).to(eq("These words are Antigrams!"))
+  end
 end

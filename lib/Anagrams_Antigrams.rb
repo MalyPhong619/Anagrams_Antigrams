@@ -12,7 +12,7 @@ class Anagram
       if (@word.downcase.split("").sort.join == @word2.downcase.split("").sort.join)
         return "These words are Anagrams"
       else
-        return "These words are not Anagrams!"
+        return "These words are Antigrams!"
       end
     else
       return "You need to input actual words!"
