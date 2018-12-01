@@ -19,4 +19,9 @@ require 'pry'
    test_anagram = Anagram.new("weather", "wthr")
    expect(test_anagram.anagram()).to(eq("You need to input actual words!"))
  end
+
+ it("check to if words are not anagrams") do
+   test_anagram = Anagram.new("WEAther", "wreATH")
+   expect(test_anagram.anagram()).to(eq("These words are not Anagrams!"))
+ end
 end
