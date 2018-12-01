@@ -10,10 +10,12 @@ class Anagram
   def anagram()
     if((is_word?(@word)) && (is_word?(@word2)))
       if (@word.downcase.split("").sort.join == @word2.downcase.split("").sort.join)
-        return "These words are anagrams"
+        return "These words are Anagrams"
       else
-        return "You need to input actual words!"
+        return "These words are not Anagrams!"
       end
+    else
+      return "You need to input actual words!"
     end
   end
 
@@ -21,7 +23,7 @@ class Anagram
     if(word =~ /[aeiou]/)
       return true
     else
-      return "You need to input actual words!"
+      return false
     end
   end
 end
