@@ -20,8 +20,8 @@ describe("Anagram") do
     expect(test_anagram.anagram()).to(eq("You need to input actual words!"))
   end
 
-  it("check to if words are antigrams") do
-    test_anagram = Anagram.new("WEAther", "breAthe")
+  it("check to see if words are antigrams") do
+    test_anagram = Anagram.new("WEAther", "breaThe")
     expect(test_anagram.anagram()).to(eq("These words are Antigrams!"))
   end
 end

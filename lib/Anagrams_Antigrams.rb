@@ -11,7 +11,7 @@ class Anagram
     if((is_word?(@word)) && (is_word?(@word2)))
       if (@word.downcase.split("").sort.join == @word2.downcase.split("").sort.join)
         return "These words are Anagrams"
-      else
+      elsif (is_antigram?(@word, @word2))
         return "These words are Antigrams!"
       end
     else
@@ -26,4 +26,22 @@ class Anagram
       return false
     end
   end
+
+  def is_antigram?(first_word, second_word)
+    if first_word.split("") != second_word.split("")
+      return true
+    else
+      return false
+    end
+  end
+
+
+
+
+
+
+
+
+
+
 end
