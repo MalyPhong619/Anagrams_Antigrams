@@ -40,7 +40,8 @@ class Anagram
   end
 
   def special_characters(word)
-    return gsub_word = word.split("").gsub(/[^a-zA-Z0-9\-]/,"")
+    gsub_word = word.gsub(/[^!@#$%^&*()]/,"")
+    return gsub_split = gsub_word.downcase.split("").sort.join
   end
 
 
