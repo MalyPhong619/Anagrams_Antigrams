@@ -8,7 +8,7 @@ class Anagram
   end
 
   def anagram_antigram()
-    if(special_characters(@word, @word2))
+    if(special_characters(@word) == special_characters(@word2))
       if((is_word?(@word)) && (is_word?(@word2)))
         if(is_anagram?(@word, @word2))
           return "These words are Anagrams"
@@ -39,11 +39,9 @@ class Anagram
     end
   end
 
-  def special_characters(first_word, second_word)
-    word1 = first_word.delete!(/[0-9!@#$%^&*()]/)
-    word2 = second_word.delete!(/[0-9!@#$%^&*()]/)
-    if word1 == word2
-      return true
+  def special_characters(word)
+    return gsub_word = word.split("").gsub(/[^a-zA-Z0-9\-]/,"")
   end
-end
+
+
 end

@@ -26,7 +26,7 @@ describe("Anagram") do
   end
 
   it("deletes special character in inputs to check if words are antigrams or anagrams") do
-    test_anagram = Anagram.new("weather!", "wreathe")
+    test_anagram = Anagram.new("weather!", "wreathe!!")
     expect(test_anagram.anagram_antigram()).to(eq("These words are Anagrams"))
   end
 
