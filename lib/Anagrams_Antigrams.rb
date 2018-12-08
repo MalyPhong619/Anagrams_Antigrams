@@ -14,12 +14,12 @@ class Anagram
 
     if((is_word?(gsub_word1)) && (is_word?(gsub_word2)))
       if(is_anagram?(gsub_word1, gsub_word2))
-        return "These words are Anagrams"
+        "These words are Anagrams"
       elsif (is_antigram?(gsub_word1, gsub_word2))
-        return "These words are Antigrams!"
+        "These words are Antigrams!"
       end
     else
-      return "You need to input actual words!"
+      "You need to input actual words!"
     end
   end
 
