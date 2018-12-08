@@ -1,3 +1,4 @@
+require 'rspec'
 require 'pry'
 
 class Anagram
@@ -8,16 +9,17 @@ class Anagram
   end
 
   def anagram_antigram()
-    if(special_characters(@word) == special_characters(@word2))
-      if((is_word?(@word)) && (is_word?(@word2)))
-        if(is_anagram?(@word, @word2))
-          return "These words are Anagrams"
-        elsif (is_antigram?(@word, @word2))
-          return "These words are Antigrams!"
-        end
-      else
-        return "You need to input actual words!"
+    gsub_word1 = @word.gsub(/[^a-zA-Z]/, "")
+    gsub_word2 = @word2.gsub(/[^a-zA-Z]/, "")
+
+    if((is_word?(gsub_word1)) && (is_word?(gsub_word2)))
+      if(is_anagram?(gsub_word1, gsub_word2))
+        return "These words are Anagrams"
+      elsif (is_antigram?(gsub_word1, gsub_word2))
+        return "These words are Antigrams!"
       end
+    else
+      return "You need to input actual words!"
     end
   end
 
@@ -38,11 +40,5 @@ class Anagram
       return true
     end
   end
-
-  def special_characters(word)
-    gsub_word = word.gsub(/[^!@#$%^&*()]/,"")
-    return gsub_split = gsub_word.downcase.split("").sort.join
-  end
-
 
 end
