@@ -34,5 +34,5 @@ class Anagram
   def is_antigram?(first_word, second_word)
     first_word.split("") != second_word.split("")
   end
-
+  
 end

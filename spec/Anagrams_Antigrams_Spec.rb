@@ -34,5 +34,9 @@ describe("Anagram") do
     test_anagram = Anagram.new("the weatHER is cold!", "otherWISE latched!!")
     expect(test_anagram.anagram_antigram()).to(eq("These words are Anagrams"))
   end
+  it("will test multiple word sentences to see check if they're anagrams") do
+    test_anagram = Anagram.new("the weatHER is cold!", "It's snowing outside!")
+    expect(test_anagram.anagram_antigram()).to(eq("These words are Antigrams!"))
+  end
 
 end
