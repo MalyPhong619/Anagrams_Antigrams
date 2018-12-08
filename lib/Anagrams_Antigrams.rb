@@ -24,21 +24,15 @@ class Anagram
   end
 
   def is_anagram?(first_word, second_word)
-    if (first_word.downcase.split("").sort.join == second_word.downcase.split("").sort.join)
-      return true
-    end
+    (first_word.downcase.split("").sort.join == second_word.downcase.split("").sort.join)
   end
 
   def is_word?(word)
-    if(word =~ /[aeiou]/)
-      return true
-    end
+    (word =~ /[aeiou]/)
   end
 
   def is_antigram?(first_word, second_word)
-    if first_word.split("") != second_word.split("")
-      return true
-    end
+    first_word.split("") != second_word.split("")
   end
 
 end
