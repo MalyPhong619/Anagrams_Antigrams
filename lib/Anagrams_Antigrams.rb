@@ -15,8 +15,7 @@ class Anagram
     if((is_word?(gsub_word1)) && (is_word?(gsub_word2)))
       if(is_anagram?(gsub_word1, gsub_word2))
         "These words are Anagrams"
-      elsif (is_antigram?(gsub_word1, gsub_word2))
-        "These words are Antigrams!"
+      else is_antigram?
       end
     else
       "You need to input actual words!"
@@ -24,15 +23,19 @@ class Anagram
   end
 
   def is_anagram?(first_word, second_word)
-    (first_word.downcase.split("").sort.join == second_word.downcase.split("").sort.join)
+    (first_word.downcase.split("").sort.join == (second_word.downcase.split("").sort.join))
   end
 
   def is_word?(word)
     (word =~ /[aeiou]/)
   end
 
-  def is_antigram?(first_word, second_word)
-    first_word.split("") != second_word.split("")
+  def is_antigram?
+    @cross_word = @word.split("") & @word2.split("")
+    if @cross_word.length > 0
+      result = @cross_word.join(", ")
+      "These words are not anagrams but do contain " + result
+    end
   end
-  
+
 end
