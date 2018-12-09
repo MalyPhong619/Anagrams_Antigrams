@@ -35,6 +35,8 @@ class Anagram
     if @cross_word.length > 0
       result = @cross_word.join(", ")
       "These words are not anagrams but do contain " + result
+    else
+      "These words are antigrams!"
     end
   end
 

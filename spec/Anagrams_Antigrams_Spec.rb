@@ -40,4 +40,9 @@ describe("Anagram") do
     expect(test_anagram.anagram_antigram()).to(eq("These words are not anagrams but do contain e"))
   end
 
+  it("will test multiple word sentences to see check if they're anagrams/antigrams") do
+    test_anagram = Anagram.new("hey", "no")
+    expect(test_anagram.anagram_antigram()).to(eq("These words are antigrams!"))
+  end
+
 end
